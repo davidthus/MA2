@@ -12,7 +12,24 @@
 
 {#if $user}
 	<h2 class="text-lg text-slate-50 mt-6 font-playpen">Welcome, {$user.displayName}</h2>
-	<p class="text-center text-green-500 font-playpen">You are logged in</p>
+	<section class="rounded-lg bg-slate-800 flex flex-col items-center p-8 mt-6">
+		<p class="text-center text-red-500 font-playpen">you are not reading anything...</p>
+		<a href="/acts"
+			><button
+				class="py-4 px-8 my-4 rounded-full text-slate-50 bg-blue-600 outline-none font-playpen"
+				>Go To Acts</button
+			></a
+		>
+		<p class="text-center text-green-500 font-playpen">or preview</p>
+		<a href="/acts/1"
+			><div
+				class="py-4 px-8 mt-8 rounded-md text-slate-50 bg-green-600 outline-none font-playpen flex flex-col"
+			>
+				<p class="font-kay">Act I / Chapter I</p>
+				<p class="font-kay">A Gift From An Imp</p>
+			</div></a
+		>
+	</section>
 	<button
 		class="py-4 px-8 mt-8 rounded-full text-slate-50 bg-blue-600 outline-none font-playpen"
 		on:click={async () => {

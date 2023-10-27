@@ -66,9 +66,7 @@ export const user = userStore();
 
 interface UserData {
 	photoURL: string;
-	username: string;
-	bio: string;
-	links: any[];
+	acts: any[];
 }
 
 export const userData: Readable<UserData | null> = derived(user, ($user, set) => {
