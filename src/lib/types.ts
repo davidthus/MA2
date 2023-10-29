@@ -1,4 +1,6 @@
 export interface IAct {
+	// id: string;
 	number: number;
-	title: string;
+	description: string;
+	chapters: { number: number; title: string }[];
 }
