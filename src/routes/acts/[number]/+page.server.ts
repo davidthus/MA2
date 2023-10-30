@@ -7,8 +7,6 @@ export const load = (async ({ params }: any) => {
 	const { number } = params;
 	const act = acts.find((act) => act.number.toString() === number);
 
-	console.log(number);
-
 	if (!act) {
 		throw error(404, { message: 'Act not found' });
 	}
