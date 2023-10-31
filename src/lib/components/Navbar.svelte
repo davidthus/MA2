@@ -9,7 +9,7 @@
 	<nav>
 		<ul class="flex">
 			{#each routes as route}
-				<li class="border-x p-4 border-gray-50 text-gray-50 font-kay text-lg">
+				<li class="border-l p-4 border-gray-50 text-gray-50 font-kay text-lg last:border-r">
 					<a href={`/${route.toLowerCase()}`}>{route === '' ? 'Home' : route}</a>
 				</li>
 			{/each}
