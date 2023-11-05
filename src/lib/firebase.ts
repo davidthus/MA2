@@ -5,6 +5,7 @@ import { initializeApp } from 'firebase/app';
 import { doc, getFirestore, onSnapshot } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 import { derived, writable, type Readable } from 'svelte/store';
+import type { UserData } from './types';
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyBsn6mBzGCBJsVDkf2M4T6zDndkx2r1Lmw',
@@ -63,11 +64,6 @@ function docStore<T>(path: string) {
 }
 
 export const user = userStore();
-
-interface UserData {
-	photoURL: string;
-	acts: any[];
-}
 
 export const userData: Readable<UserData | null> = derived(user, ($user, set) => {
 	if ($user) {
