@@ -48,4 +48,5 @@
 		</div>
 	</form>
 	<h1 class="mt-6 font-playpen text-2xl text-white">User Id: {$user?.uid}</h1>
+	<p class="">Email: {$user?.email}</p>
 </AuthCheck>

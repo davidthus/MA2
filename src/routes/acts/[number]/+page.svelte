@@ -7,7 +7,13 @@
 	const { act } = data;
 </script>
 
+<svelte:head>
+	<title>Act {act.number}</title>
+	<meta name="description" content={act.description} />
+</svelte:head>
+
 {#if $page.error}
 	<h1>{$page.error.message}</h1>
 {/if}
+
 <Act {act} />
