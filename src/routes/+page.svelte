@@ -10,6 +10,14 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Mathical Adventures</title>
+	<meta
+		name="description"
+		content="A place for primary school children to enjoy reading and learning mathematics."
+	/>
+</svelte:head>
+
 {#if $user}
 	<h2 class="text-lg text-slate-50 mt-6 font-playpen">Welcome, {$user.displayName}</h2>
 	<section class="rounded-lg bg-slate-800 flex flex-col items-center p-8 mt-6">
