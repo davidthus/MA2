@@ -1,6 +1,7 @@
 <script lang="ts">
 	import AuthCheck from '$lib/components/AuthCheck.svelte';
-	import { db, storage, user, userData } from '$lib/firebase';
+	import { auth, db, storage, user, userData } from '$lib/firebase';
+	import { signOut } from 'firebase/auth';
 	import { doc, updateDoc } from 'firebase/firestore';
 	import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 
@@ -48,5 +49,11 @@
 		</div>
 	</form>
 	<h1 class="mt-6 font-playpen text-2xl text-white">User Id: {$user?.uid}</h1>
-	<p class="">Email: {$user?.email}</p>
+	<p class="mt-2 font-playpen text-xl text-white">Email: {$user?.email}</p>
+	<button
+		class="py-4 px-8 mt-8 rounded-full text-slate-50 bg-blue-600 outline-none font-playpen"
+		on:click={async () => {
+			await signOut(auth);
+		}}>Sign out</button
+	>
 </AuthCheck>

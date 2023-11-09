@@ -38,12 +38,6 @@
 			</div></a
 		>
 	</section>
-	<button
-		class="py-4 px-8 mt-8 rounded-full text-slate-50 bg-blue-600 outline-none font-playpen"
-		on:click={async () => {
-			await signOut(auth);
-		}}>Sign out</button
-	>
 {:else}
 	<p class="text-8xl text-slate-50 w-9/12 mt-6 text-center">a character is in need of you...</p>
 	<div class="mt-6">
