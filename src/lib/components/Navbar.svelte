@@ -1,5 +1,5 @@
 <script>
-	import { userData } from '$lib/firebase';
+	import { user, userData } from '$lib/firebase';
 	import Logo from './Logo.svelte';
 </script>
 
@@ -14,8 +14,10 @@
 				<a href="/acts">Acts</a>
 			</li>
 		</ul>
-		<a href="/dashboard">
-			<img src={$userData?.photoURL} alt="" class="w-12 h-12 rounded-full" /></a
-		>
+		{#if $user}
+			<a href="/dashboard">
+				<img src={$userData?.photoURL} alt="" class="w-12 h-12 rounded-full" /></a
+			>
+		{/if}
 	</nav>
 </header>
