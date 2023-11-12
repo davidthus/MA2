@@ -26,29 +26,35 @@
 
 	<form class="max-w-screen-md w-full">
 		<div class="flex flex-col w-full max-w-xs my-10 mx-auto text-center items-center">
-			<img
-				src={previewURL ?? $userData?.photoURL ?? '/user.png'}
-				alt="photoURL"
-				width="256"
-				height="256"
-				class="mx-auto rounded-full mb-2 w-64 h-64"
-			/>
-			<label for="photoURL">
-				<span class="text-white font-playpen text-md">Pick a file</span>
+			<label for="imageUpload" class="relative cursor-pointer rounded-full w-64 h-64">
+				<div
+					id="pencilIconWrapper"
+					class="w-64 h-64 hover:bg-black/50 absolute inset-0 flex justify-center items-center z-10 rounded-full transition"
+				>
+					<img id="pencilIcon" src="/pencil.png" class="w-20 h-20" alt="" />
+				</div>
+				<input
+					on:change={upload}
+					name="photoURL"
+					type="file"
+					id="imageUpload"
+					class="opacity-0 absolute inset-0"
+					accept="image/png, image/jpeg, image/gif, image/webp"
+				/>
+				<img
+					src={previewURL ?? $userData?.photoURL ?? '/user.png'}
+					alt="photoURL"
+					width="256"
+					height="256"
+					class="mx-auto rounded-full w-64 h-64 absolute inset-0"
+				/>
 			</label>
-			<input
-				on:change={upload}
-				name="photoURL"
-				type="file"
-				class="mt-4 w-full max-w-xs flex justify-center gap-2 text-white font-playpen text-base"
-				accept="image/png, image/jpeg, image/gif, image/webp"
-			/>
 			{#if uploading}
 				<p>Uploading...</p>
 			{/if}
 		</div>
 	</form>
-	<h1 class="mt-6 font-playpen text-2xl text-white">User Id: {$user?.uid}</h1>
+	<p class="mt-6 font-playpen text-2xl text-white">User Id: {$user?.uid}</p>
 	<p class="mt-2 font-playpen text-xl text-white">Email: {$user?.email}</p>
 	<button
 		class="py-4 px-8 mt-8 rounded-full text-slate-50 bg-blue-600 outline-none font-playpen"
@@ -57,3 +63,12 @@
 		}}>Sign out</button
 	>
 </AuthCheck>
+
+<style>
+	#pencilIconWrapper #pencilIcon {
+		display: none;
+	}
+	#pencilIconWrapper:hover #pencilIcon {
+		display: block;
+	}
+</style>
