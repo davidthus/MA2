@@ -31,7 +31,7 @@
 				alt="photoURL"
 				width="256"
 				height="256"
-				class="mx-auto rounded-full mb-2"
+				class="mx-auto rounded-full mb-2 w-64 h-64"
 			/>
 			<label for="photoURL">
 				<span class="text-white font-playpen text-md">Pick a file</span>
