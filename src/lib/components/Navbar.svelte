@@ -18,7 +18,7 @@
 			</li>
 		</ul>
 		{#if $user}
-			<a href="/dashboard">
+			<a href="/dashboard" class="bg-transparent fit-cont">
 				<img src={$userData?.photoURL} alt="" class="w-12 h-12 rounded-full" /></a
 			>
 		{/if}

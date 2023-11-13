@@ -50,7 +50,7 @@
 				/>
 			</label>
 			{#if uploading}
-				<p>Uploading...</p>
+				<p class="text-white text-base font-playpen mt-4">Uploading...</p>
 			{/if}
 		</div>
 	</form>
